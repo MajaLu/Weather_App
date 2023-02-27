@@ -23,8 +23,12 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
         document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage = "url('https://api.unsplash.com/search/photos?" + name + "')"
+        document.body.style.backgroundImage = "url('https://api.unsplash.com/search/photos/1600x900/?"query=#{name}&content_filter=high&client_id=#{ENV['BWWvgGxoJ0mfCadHhcXU8j3ll6LdhReuTqC0RsQdixc']}"')"
     },
+    
+    
+    https://api.unsplash.com/search/photos?query=#{query}&content_filter=high&client_id=#{ENV['UNSPLASH_ACCESS_KEY']}
+    
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value)
     }
